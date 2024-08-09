@@ -1,0 +1,15 @@
+
+<form action="/dashboard" method="POST" class="home">
+    <label for="UID">Enter U.I.D of Student</label>
+    <input type="number" name="uid" autocomplete="off" min="2024001" max="2024020" class="entry-uid">
+    <input type="submit" value="Submit" class="submit">
+</form>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const header = document.querySelector(".header");
+        header.style.visibility = "hidden";
+        const logout = document.querySelector("#logout");
+        logout.style.visibility = "visible";
+    });
+</script>

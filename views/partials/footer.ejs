@@ -1,0 +1,11 @@
+<% if (locals.result != null) { %>
+    <% if (locals.isStudent == true) { %>
+        <div class="redirect1">
+            <button><a href="/student-login">Check Result for another U.I.D  &nearr;</a></button>
+        </div>
+    <% }else{ %>
+        <div class="redirect1">
+            <button><a href="/home">New Entry &nearr;</a></button>
+        </div>
+    <% } %>
+<% } %>

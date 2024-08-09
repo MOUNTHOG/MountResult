@@ -1,0 +1,51 @@
+<div class="student_details">
+    <p>First Name :</p>
+    <input type="text" name="name" value="<%= locals.f_name %>" readonly>
+    <p>SurName :</p>
+    <input type="text" name="name" value="<%= locals.l_name %>" readonly>
+    <p>U.I.D :</p>
+    <input type="text" name="uid" value="<%= locals.uid %>" readonly>
+    <p>Branch :</p>
+    <% if (locals.branch.trim() === 'Computer Engineering') { %>
+        <input type="text" name="uid" value="C.E" readonly>
+    <% }else if(locals.branch.trim() === 'Computer Science Engineering'){%>
+        <input type="text" name="uid" value="C.S.E" readonly>
+    <% }else{%>
+        <input type="text" name="uid" value="E.X.T.C" readonly>
+    <% } %>
+    <p>Semester :</p>
+    <input type="text" name="uid" value="<%= locals.sem %>" readonly>
+</div>
+    <div class="subject">
+        <p>
+            <% if(locals.subj == "phy"){ %>
+                Physics
+            <%} else if(locals.subj == "chem"){ %>
+                Chemistry
+            <% }else{ %>
+                Mathematics
+            <% } %>
+        </p>
+        <form action="/enter" method="POST" class="subject_entry">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="hidden" name="subj" value="<%= locals.subj %>">
+            <div class="ise_entry">
+            <label for="ISE"> Enter I.S.E marks:</label>
+            <input type="text" name="ISE"  autocomplete="off" <%= locals.type == 'add' ? 'required' : '' %>  value="<%= locals.ise != null ? ise : "" %>" max="20">
+            </div>
+            <div class="mse_entry">
+            <label for="MSE">Enter M.S.E marks: </label>
+            <input type="text" name="MSE" autocomplete="off" <%= locals.type == 'add' ? 'required' : '' %> value="<%= locals.mse != null ? mse : "" %>" max="30">
+            </div>
+            <div class="ese_entry">
+            <label for="ESE">Enter E.S.E marks: </label>
+            <input type="text" name="ESE" autocomplete="off" <%= locals.type == 'add' ? 'required' : '' %> value="<%= locals.ese != null ? ese : "" %>" max="100">
+            </div>
+            <div class="submit_entry">
+            <input type="submit" value="SUBMIT" class="submit">
+            <input type="hidden" name="type" value="<%= locals.type %>">
+            </div>
+        </form>
+    </div>
+</div>
+

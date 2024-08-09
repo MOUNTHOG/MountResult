@@ -1,0 +1,41 @@
+<%if(locals.isStudent){ %>
+    <h2 class="result_header">
+        RESULT:
+    </h2>
+<% }else{%>
+<header class="header">
+    <nav class="header_nav">
+        <a href="/home" id="posthome">Home</a>
+        </form>
+        <a href="/dashboard" id="postdashboard">Dashboard</a> 
+        <form id="postdash" action="/dashboard" method="POST" style="display: none;">
+        <input type="hidden" name="uid" value="<%= locals.uid %>">
+        </form>
+        <% if (locals.nologout == null) { %>
+        <button id="logout"><a href="/logout">Logout</a></button>
+        <% }else{
+
+        } %>
+        
+    </nav>
+</header>
+<% } %>
+
+<script>
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("postdashboard").addEventListener("click", () => {
+            event.preventDefault(); // Prevent the default link click behavior
+            document.getElementById("postdash").submit(); // Submit the form as a POST request
+        });
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("postresult").addEventListener("click", () => {
+            event.preventDefault(); // Prevent the default link click behavior
+            document.getElementById("postres").submit(); // Submit the form as a POST request
+        });
+    });
+</script>

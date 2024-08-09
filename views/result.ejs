@@ -1,0 +1,166 @@
+<div class="result">
+    <table id="my-table">
+        <tr >
+            <td rowspan="1" colspan="2" style="border-right: none;">
+                <img src="/images/result.png" class="reult_logo" style="width:100px;" >
+            </td>
+            <td rowspan="1" colspan="5" style="border-left: none;">
+                <p class="college"><b>MOUNTHOG ENGINEERING UNIVERSITY</b></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <b>U.I.D : </b><%= locals.uid %>
+            </td>
+            <td colspan="5">
+                <b>Name : </b><%= locals.name%>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <b>Branch : </b><%= locals.branch %>
+            </td>
+            <td colspan="3">
+                <b>Semester : </b><%= locals.sem %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1">
+                <b>Sr.no</b>
+            </td>
+            <td colspan="1">
+                <b>Subject</b>
+            </td>
+            <td colspan="1">
+                <b>E.S.E</b>
+            </td>
+            <td colspan="1">
+                <b>Total Marks<br> (I.S.E+M.S.E+E.S.E)</b>
+            </td>
+            <td colspan="1">
+                <b>PASS / FAIL</b>
+            </td>
+            <td colspan="1">
+                <b>Credits earned</b>
+            </td>
+            <td colspan="1">
+                <b>Grade Pointer</b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1">
+                1
+            </td>
+            <td colspan="1">
+                Physics
+            </td>
+            <td colspan="1">
+                <%= locals.marks.p_ese != null? locals.marks.p_ese : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.marks.p_total != null? locals.marks.p_total : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.p_pointer > 3 ? "PASS" : "FAIL" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.p_pointer > 3 ? 3 : 0 %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.p_pointer > 3 ? locals.result.p_pointer : "N.G." %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1">
+                2
+            </td>
+            <td colspan="1">
+                Chemistry
+            </td>
+            <td colspan="1">
+                <%= locals.marks.c_ese != null? locals.marks.c_ese : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.marks.c_total != null? locals.marks.c_total : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.c_pointer > 3 ? "PASS" : "FAIL" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.c_pointer > 3 ? 3 : 0 %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.c_pointer > 3 ? locals.result.c_pointer : "N.G." %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="1">
+                3
+            </td>
+            <td colspan="1">
+                Mathematics
+            </td>
+            <td colspan="1">
+                <%= locals.marks.m_ese != null? locals.marks.m_ese : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.marks.m_total != null? locals.marks.m_total : "-" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.m_pointer > 3 ? "PASS" : "FAIL" %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.m_pointer > 3 ? 4 : 0 %>
+            </td>
+            <td colspan="1">
+                <%= locals.result.m_pointer > 3 ? locals.result.m_pointer : "N.G." %>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" rowspan="1" class="succesful">
+                <b>Remark : <%= locals.result.credits == 10 ? "Successful": "Unsuccessful" %></b>
+            </td>
+            <td colspan="1" rowspan="1" class="pass">
+                <b><%= locals.result.credits == 10 ? "PASS" : "FAIL" %></b>
+            </td>
+            <td colspan="2" rowspan="1" class="credits">
+                <b>Total Credits <br> earned = <%= locals.result.credits %></b>
+            </td>
+        </tr> 
+        <tr>
+            <td colspan="7" class="cgpa">
+                <b>C.G.P.A : <%= locals.result.cgpa != 0 ? locals.result.cgpa : "N.G." %></b>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const new1 = document.querySelector(".new");
+    const pass = document.querySelector(".pass");
+    const successful = document.querySelector(".succesful");
+    const cgpa = document.querySelector(".cgpa");
+    const college = document.querySelector(".college")
+    const credits = document.querySelector(".credits");
+    cgpa.style.fontSize = "large";
+    cgpa.style.fontFamily = "'Poppins', sans-serif";
+    successful.style.fontSize = "large";
+    successful.style.fontFamily = "'Poppins', sans-serif";
+    pass.style.fontFamily = "'Poppins', sans-serif";
+    college.style.fontSize = "x-large";
+    college.style.fontFamily = "'Poppins', sans-serif";
+    credits.style.fontSize = "large";
+    credits.style.fontFamily = "'Poppins', sans-serif";
+    if (pass.textContent.trim() === 'FAIL') {
+        pass.style.color = "red";
+        pass.style.fontSize = "large";
+    } else {
+        pass.style.color = "green";
+        pass.style.fontSize = "large";
+    }
+    new1.style.visibility = "visible";
+    });
+</script>
+

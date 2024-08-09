@@ -1,0 +1,401 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url('../images/9760493.jpg');
+    background-size: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+.home{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 200px auto;
+    padding: 0;
+    border: 5px groove rgb(190, 188, 188);
+    border-radius: 10px;
+    backdrop-filter: blur(3px);
+    z-index: 2;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    font-family: 'Poppins', sans-serif;
+}
+
+.home label{
+    margin-top: 10px;
+    font-size: large;
+}
+
+.entry-uid{
+    margin: 20px 0;
+    padding-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.submit{
+    margin-bottom: 10px;
+    padding: 7px 10px;
+    border: 1px solid rgba(0, 91, 196, 0.815);
+    background-color: rgba(0, 91, 196, 0.815);
+    color: white;
+    border-radius: 10px;
+}
+
+.submit:hover{
+    box-shadow: 0 0 10px rgba(0, 104, 156, 0.815);
+    cursor: pointer;
+}
+
+.student_details{
+    width: 350px;
+    display: grid;
+    text-align: center;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    border: 5px solid rgb(168, 168, 168);
+    border-radius: 20px;
+    backdrop-filter: blur(3px);
+    margin: 30px auto;
+    padding: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.student_details input{
+    width: 150px;
+}
+
+.phy, .chem, .math{
+    width: 500px;
+    text-align: center;
+    margin: 10px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows:  1fr 1fr;
+    gap: 10px;
+} 
+
+.marks{
+    margin: 20px 0;
+    background-color: rgb(255, 200, 97);
+    border-radius: 10px;
+    border: 5px solid rgb(255, 192, 74);
+    opacity: .8;
+    box-shadow: 0px 0px 10px 5px rgba(255, 192, 74, 0.534);
+    font-family: 'Poppins', sans-serif;
+}
+
+.marks .entry{
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.marks h3{
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    font-weight: 300;
+}
+
+.ise{
+    font-size: larger;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    font-weight: 600;
+}
+
+.mse{
+    font-size: larger;
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    font-weight: 600;
+}
+
+.ese{
+    font-size: larger;
+    grid-column: 4 / 5;
+    grid-row: 1 / 3;
+    font-weight: 600;
+}
+
+.total{
+    font-size: larger;
+    grid-column: 5 / 6;
+    grid-row: 1 / 3;
+    font-weight: 600;
+}
+
+.title{
+    width: 500px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+.generate{
+    text-align: center;
+}
+
+.generate input{
+    background-color: rgba(0, 196, 0, 0.795);
+    border: 2px solid rgba(0, 180, 0, 0.801);
+    border-radius: 10px;
+    padding: 7px 7px;
+    color: white;
+    margin-top: 10px;
+}
+
+.generate input:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 5px rgba(0, 150, 0, 0.445);
+}
+
+.result{
+    margin: 30px 0 ;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+    background-color: #fddcdc;
+    font-size: large;
+}
+th, td {
+    border: 2px solid #000000;
+    padding: 12px;
+    text-align: left;
+}
+
+
+th {
+    background-color: #000000;
+    font-size: 16px;
+}
+td {
+    font-size: 14px;
+}
+
+.teacher_login{
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 150px auto;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #77dfffe5;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.login input{
+    margin: 10px 0;
+    border-radius: 10px;
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+}
+
+.teacher_login p{
+    margin: 10px 0;
+    font-size: x-large;
+    font-weight: 600;
+    color: white;
+}
+
+.login_submit{
+    text-align: center;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid rgba(0, 91, 196, 0.815);
+    background-color: rgba(0, 91, 196, 0.815);
+    color: white;
+    border-radius: 10px;
+}
+
+.login_submit:hover{
+    box-shadow: 0 0 10px rgba(0, 95, 143, 0.815);
+    cursor: pointer;
+}
+
+.index{
+    margin-top: 200px;
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.teacher{
+    width: 200px;
+    height: 100px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.teacher button{
+    border-radius: 20px;
+    text-align: center;
+    width: 80px;
+    margin: 0 auto;
+    padding: 10px 0px;
+    background-color: #000000bd;
+    border: none;
+}
+
+.teacher button:hover{
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5);
+    width: 100px;
+    padding: 13px 0;
+}
+
+.teacher a{
+    color: white;
+    text-decoration: none;
+}
+
+.header_home{
+    background-color: transparent;
+    border: 0;
+}
+
+.contaier{
+    margin: auto;
+
+}
+
+.header_nav{
+    width: 390px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.header_nav a{
+    text-decoration: none;
+    color: black;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+.header_nav a:hover{
+    text-decoration: line;
+}
+
+
+.redirect1 button{
+    border-radius: 20px;
+    padding: 10px 10px;
+    color: white;
+    background-color: rgba(0, 28, 88, 0.911);
+    border: none;
+}
+
+.redirect1 button a{
+    text-decoration: none;
+    color: white;
+}
+
+.redirect1 button:hover{
+    box-shadow: 0px 0px 10px 5px rgba(0, 43, 136, 0.555);
+   cursor: pointer;
+}
+
+
+
+.student{
+    width: 500px;
+    margin: 40px auto;
+}
+.subject{
+    text-align: center;
+}
+
+.subject p{
+    font-family: 'Poppins', sans-serif;
+    font-size: large;
+    font-weight: 600;
+}
+
+
+.subject_entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subject_entry input{
+    width: 50px;
+}
+
+.subject_entry div{
+    margin-top: 20px;
+}
+
+.subject_entry .submit{
+    width: fit-content;
+}
+
+#logout{
+    background-color: rgba(214, 0, 0, 0.801);
+    border-radius: 10px;
+    padding: 5px 10px ;
+    border: 0;
+}
+
+#logout a{
+    font-size: large;
+    color: white;
+}
+
+#logout:hover{
+    box-shadow: 0 0 10px rgba(110, 0, 0, 0.568);
+    cursor: pointer;
+}
+
+
+.result_header{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+

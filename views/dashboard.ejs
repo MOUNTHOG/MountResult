@@ -1,0 +1,102 @@
+
+    <div class="student_details">
+        <p>First Name :</p>
+        <input type="text" name="name" value="<%= locals.f_name %>" readonly>
+        <p>SurName :</p>
+        <input type="text" name="name" value="<%= locals.l_name %>" readonly>
+        <p>U.I.D :</p>
+        <input type="text" name="uid" value="<%= locals.uid %>" readonly>
+        <p>Branch :</p>
+        <% if (locals.branch.trim() === 'Computer Engineering') { %>
+            <input type="text" name="uid" value="C.E" readonly>
+        <% }else if(locals.branch.trim() === 'Computer Science Engineering'){%>
+            <input type="text" name="uid" value="C.S.E" readonly>
+        <% }else{%>
+            <input type="text" name="uid" value="E.X.T.C" readonly>
+        <% } %>
+        <p>Semester :</p>
+        <input type="text" name="uid" value="<%= locals.sem %>" readonly>
+    </div>
+    <div class="marks">
+        <div class="title">
+            <p>Subject</p>
+            <p>I.S.E</p>
+            <p>M.S.E</p>
+            <p>E.S.E</p>
+            <p>Total</p>
+        </div>
+        <div class="phy">
+        <h3>Physics:</h3>
+        <p class="ise"><%= locals.pmarks.ise != null ? locals.pmarks.ise : "-" %></p>
+        <p class="mse"><%= locals.pmarks.mse  != null ? locals.pmarks.mse : "-" %></p>
+        <p class="ese"><%= locals.pmarks.ese  != null ? locals.pmarks.ese : "-" %></p>
+        <p class="total"><%= locals.pmarks.total  != null ? locals.pmarks.total : "-" %></p>
+        <div class="entry">
+        <form action="/add" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.phy %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa != null ? "hidden" : locals.pmarks ? "hidden" : "submit" %>" value="Add Marks">
+            <input type="hidden" name="type" value="add">
+        </form>
+        <form action="/edit" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.phy %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa != null ? "hidden" : locals.pmarks ? "submit" : "hidden" %>" value="Edit Marks">
+            <input type="hidden" name="type" value="edit">
+        </form>
+        </div>
+        </div>
+
+        <div class="chem">
+        <h3>Chemistry:</h3>
+        <p class="ise"><%= locals.cmarks.ise != null ? locals.cmarks.ise : "-" %></p>
+        <p class="mse"><%= locals.cmarks.mse != null ? locals.cmarks.mse : "-" %></p>
+        <p class="ese"><%= locals.cmarks.ese != null ? locals.cmarks.ese : "-" %></p>
+        <p class="total"><%= locals.cmarks.total != null ? locals.cmarks.total : "-" %></p>
+        <div class="entry">
+        <form action="/add" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.chem %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa != null ? "hidden" : locals.cmarks ? "hidden" : "submit" %>" value="Add Marks">
+            <input type="hidden" name="type" value="add">
+        </form>
+        <form action="/edit" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.chem %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa  !=null ? "hidden" : locals.cmarks  ? "submit" : "hidden" %>" value="Edit Marks">
+            <input type="hidden" name="type" value="edit">
+        </form>
+        </div>
+        </div>
+
+        <div class="math">
+        <h3>Mathematics:</h3>
+        <p class="ise"><%= locals.mmarks.ise != null ? locals.mmarks.ise : "-"  %></p>
+        <p class="mse"><%= locals.mmarks.mse != null ?  locals.mmarks.mse : "-" %></p>
+        <p class="ese"><%= locals.mmarks.ese != null ? locals.mmarks.ese : "-" %></p>
+        <p class="total"><%= locals.mmarks.total != null ? locals.mmarks.total : "-" %></p>
+        <div class="detail">
+        <form action="/add" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.math %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa !=null ? "hidden" : locals.mmarks ? "hidden" : "submit" %>" value="Add Marks">
+            <input type="hidden" name="type" value="add">
+        </form>
+        <form action="/edit" method="POST">
+            <input type="hidden" name="subj" value="<%= locals.subj.math %>">
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="<%= locals.sgpa !=null ? "hidden" : locals.mmarks ? "submit" : "hidden" %>" value="Edit Marks">
+            <input type="hidden" name="type" value="edit">
+        </form>
+        </div>
+        </div>
+    </div>
+        <div class="generate">
+        <form action="/result1" method="POST">
+            <p><b><%= locals.sgpa !=null ? "" : "Please note that once the result is generated, any further edits will not be possible."%></b></p>
+            <input type="hidden" name="uid" value="<%= locals.uid %>">
+            <input type="Submit" value="<%= locals.sgpa !=null ? "VIEW RESULT" : "GENERATE RESULT" %>">
+        </form>
+        </div>
+  
+
